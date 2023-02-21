@@ -16,8 +16,11 @@ fun main() {
 }
 
 fun groceryStore() {
-    val groceryList = ArrayList<String>()
-    val removeGroceryList = ArrayList<String>()
+    val groceryList = arrayListOf<String>()
+    val sampleArray = ArrayList<String>()
+    val list = listOf<String>()
+    val listMutable = mutableListOf<String>()
+    val removeGroceryList = arrayListOf<String>()
 
     while (true) {
         println("Welcome to the grocery store")
@@ -25,7 +28,8 @@ fun groceryStore() {
         println("1. Add an item and its price")
         println("2. Remove an item")
         println("3. Print the list")
-        println("4. Exit")
+        println("4. Search for an item in the grocery")
+        println("5. Exit")
 
         when (readln().toIntOrNull()) {
             1 -> {
@@ -63,10 +67,32 @@ fun groceryStore() {
                 }
             }
             4 -> {
-                println("Exiting the program")
-                return
+                println("Search the number of the grocery item")
+                val itemToBeSearch = readLine() ?: ""
+                val searchItem = groceryList.first {
+                    it.contains(
+                        itemToBeSearch,
+                        ignoreCase = true
+                    )
+                } //Text to be matched
+                val element = groceryList.indexOf(searchItem) // Number of the Element
+                println("You found ${groceryList[element]}") // Yung mismong element yung ipriprint kung saan nagmatch sa first condition
+
+                groceryList.forEachIndexed { index, itemName ->
+                    if (itemName.contains(itemToBeSearch, ignoreCase = true)) {
+                            println("You found ${groceryList[index]}")
+                        } else println("")
+                }
+//
+//                groceryList.sortBy {
+//
+//                }
+            }
+            5 -> {
+//                println("Exiting the program")
+//                return
 //                groceryList.clear()
-//                println(groceryList.toString())
+                println(groceryList.toString())
             }
             else -> {
                 println("Invalid option! Please try again")
