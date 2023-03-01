@@ -1,14 +1,10 @@
 package com.sablot.activity.objects_and_classes.classes
 
 fun main() {
-    val myHouse = House()
 
-//    myHouse.color = "yellow"
-//    myHouse.numberOfWindows = 5
-//    myHouse.isForSale = true
+    val houseList = listOf(
+        House("Yellow", 4, true),
+        House("Blue", 2, false)
+    )
 
-
-    println(myHouse.color)
-    println(myHouse.numberOfWindows)
-    println(!myHouse.isForSale)
 }

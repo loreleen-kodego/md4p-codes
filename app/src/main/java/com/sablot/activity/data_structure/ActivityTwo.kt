@@ -32,7 +32,6 @@ class CoffeeShop(val beverages: List<Beverage>) {
 }
 
 fun main() {
-    val myHouse = House()
     val coffeeShop = CoffeeShop(beverages)
 
     val unitsSoldByBeverageType = mapOf(

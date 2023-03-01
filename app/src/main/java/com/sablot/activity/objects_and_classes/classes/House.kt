@@ -1,22 +1,29 @@
 package com.sablot.activity.objects_and_classes.classes
 
-class House {
-    var color : String ="white"
-    var numberOfWindows: Int = 2
-    var isForSale: Boolean = false
+
+//Class
+//Required parameters inside the constructor
+class House(val color: String,
+    val numberOfWindows: Int,
+    val isForSale: Boolean) {
 
 
-    fun updateColor(newColor : String) {
-        color = newColor
+    //Methods is functions inside a class
+    fun updateColor() {
+
     }
 
-    fun updateNumberOfWindows(number: Int) {
-        numberOfWindows = number
+    fun updateNumberOfWindows() {
+
     }
 
+    //This will initialized when an object is instantiated
     init {
-        color = "Black"
+
     }
+
+
+
 
 }
 
