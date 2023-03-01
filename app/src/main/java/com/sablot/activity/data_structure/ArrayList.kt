@@ -22,6 +22,8 @@ fun groceryStore() {
     val listMutable = mutableListOf<String>()
     val removeGroceryList = arrayListOf<String>()
 
+    removeGroceryList.remove("Yawa")
+
     while (true) {
         println("Welcome to the grocery store")
         println("Please choose an option:")

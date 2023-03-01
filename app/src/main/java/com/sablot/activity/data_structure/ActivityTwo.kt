@@ -1,5 +1,7 @@
 package com.sablot.activity.data_structure
 
+import com.sablot.activity.objects_and_classes.classes.House
+
 class Beverage(val name: String, val price: Double)
 
 val beverages = listOf(
@@ -30,6 +32,7 @@ class CoffeeShop(val beverages: List<Beverage>) {
 }
 
 fun main() {
+    val myHouse = House()
     val coffeeShop = CoffeeShop(beverages)
 
     val unitsSoldByBeverageType = mapOf(

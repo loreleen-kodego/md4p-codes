@@ -1,5 +1,7 @@
 package com.sablot.activity.for_loops
 
+import com.sablot.activity.objects_and_classes.classes.House
+
 var totalSales: Double = 0.0
 var totalOrders: Int = 0
 
