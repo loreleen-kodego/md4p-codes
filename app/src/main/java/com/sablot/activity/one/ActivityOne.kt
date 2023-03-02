@@ -1,6 +1,6 @@
 package com.sablot.activity.one
 
-//fun main() {
+//fun com.sablot.activity.objects_and_classes.exercises.ten.main() {
 //    calculateArea()
 
 //    //We use readline() since we need to ask the user for the values needed
@@ -135,8 +135,8 @@ val grade6: Double = 92.0
 //Use an if control structure to determine if the year is a leap year based on the following conditions:
 //The year is evenly divisible by 4
 //If the year is divisible by 100, it is a leap year only when it is also divisible by 400.
-//Return the result.
-//fun main() {
+//com.sablot.activity.objects_and_classes.exercises.ten.Return the result.
+//fun com.sablot.activity.objects_and_classes.exercises.ten.main() {
 //    var counter = 10
 //    while (counter <= 10) {
 //        println("Counter: $counter")
@@ -156,7 +156,7 @@ fun calculateAverage(numbers: List<Int>): Double {
     return sum.toDouble() / numbers.size
 }
 
-//    fun main() {
+//    fun com.sablot.activity.objects_and_classes.exercises.ten.main() {
 //        val numbers = mutableListOf<Int>()
 //        var input: String?
 //        do {
