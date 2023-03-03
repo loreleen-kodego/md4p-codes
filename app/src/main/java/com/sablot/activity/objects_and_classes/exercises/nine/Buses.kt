@@ -4,14 +4,12 @@ class Buses(
     make: String,
     model: String,
     year: Int,
-    transmission: Transmission,
-    seatingCapacity: Int
-) : Vehicle(make, model, year), Driveable {
+    val seatingCapacity: Int) : Vehicles(make, model, year) {
 
-    override val vehicleType: VehicleType
-        get() = VehicleType.BUSES
-
-    override fun drive() {
-       println("Driving a bus")
+    init {
+        vehicleType = "Bus"
+        uniqueCharacteristic = "Seating capacity: $seatingCapacity"
+        fuelType = FuelType.GAS
+        maintenanceDate = "2000"
     }
 }
