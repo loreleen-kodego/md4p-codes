@@ -1,6 +1,5 @@
 package com.sablot.activity.objects_and_classes.exercises.nine
 
-
 //Define a function to create a vehicle based on the given type of properties of classes
 fun createVehicle(type: String,
                   make: String,
@@ -25,12 +24,11 @@ fun createVehicle(type: String,
     }
 }
 
-fun printVehicle(vehicles: List<Vehicles>) {
+fun printVehicles(vehicles: MutableList<Vehicles>) {
     for (vehicle in vehicles) {
         println(vehicle.getInfo())
     }
 }
-
 
 fun main() {
     //enum class - constant value
@@ -39,32 +37,73 @@ fun main() {
 
     val vehicles = mutableListOf<Vehicles>()
 
-    // Create a car and add it to the list
-    val carProperties = mapOf("doors" to 4)
-    val car = createVehicle("car", "Toyota", "Camry", 2021, carProperties)
-    if (car != null) {
-        vehicles.add(car)
+
+    while (true) {
+        println("Choose: car, truck, bus, display, or exit")
+        val choose = readLine() ?: break
+        when (choose) {
+            "car" -> {
+                println("Enter car Window: ")
+                val numberOfDoors = readLine()!!.toInt()
+                var carProperties = mapOf("doors" to numberOfDoors)
+                println("Enter car Type: ")
+                val carType = readLine() ?: " "
+                println("Enter car Brand: ")
+                val carBrand = readLine() ?: " "
+                println("Enter car Version: ")
+                val carVersion = readLine() ?: ""
+                println("Enter car Year: ")
+                val carYear = readLine()?.toIntOrNull() ?: 0
+                val car = createVehicle(carType, carBrand, carVersion, carYear, carProperties)
+                if (car != null) {
+                    vehicles.add(car)
+                }
+            }
+            "bus" -> {
+                println("Enter Bus Seating Capacity: ")
+                val seatingCapacity = readLine()!!.toInt()
+                var busProprties = mapOf("seating capacity" to seatingCapacity)
+                println("Enter Bus Type: ")
+                val busType = readLine() ?: " "
+                println("Enter Bus Brand: ")
+                val busBrand = readLine() ?: " "
+                println("Enter Bus Version: ")
+                val busVersion = readLine() ?: ""
+                println("Enter Bus Year: ")
+                val busYear = readLine()?.toIntOrNull() ?: 0
+                val bus = createVehicle(busType, busBrand, busVersion, busYear, busProprties)
+                if (bus != null) {
+                    vehicles.add(bus)
+                }
+            }
+
+            "truck" -> {
+                println("Enter Truck Payload Capacity: ")
+                val payloadCapacity = readLine()!!.toInt()
+                var truckProperties = mapOf("payload capacity" to payloadCapacity)
+                println("Enter Bus Type: ")
+                val truckType = readLine() ?: " "
+                println("Enter Bus Brand: ")
+                val truckBrand = readLine() ?: " "
+                println("Enter Bus Version: ")
+                val truckVersion = readLine() ?: ""
+                println("Enter Bus Year: ")
+                val truckYear = readLine()?.toIntOrNull() ?: 0
+                val truck =
+                    createVehicle(truckType, truckBrand, truckVersion, truckYear, truckProperties)
+                if (truck != null) {
+                    vehicles.add(truck)
+                }
+            }
+            "display" -> {
+                printVehicles(vehicles)
+
+            }
+            else -> {
+                return
+            }
+        }
+
     }
-
-    // Create a truck and add it to the list
-    val truckProperties = mapOf("payload capacity" to 2)
-    val truck = createVehicle("truck", "Ford", "F-150", 2021, truckProperties)
-    if (truck != null) {
-        vehicles.add(truck)
-    }
-
-    // Create a bus and add it to the list
-    val busProperties = mapOf("seating capacity" to 30)
-    val bus = createVehicle("bus", "Blue Bird", "Vision", 2021, busProperties)
-    if (bus != null) {
-        vehicles.add(bus)
-    }
-
-    //Print vehicle info
-    printVehicle(vehicles)
-
-    //Create vehicle
-    //Print Vehicle Info of the vehicles added
-    //Check if the vehicle list is empty or not otherwise add an error text
 }
 
