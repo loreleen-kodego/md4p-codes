@@ -1,6 +1,5 @@
 package com.sablot.activity.objects_and_classes.exercises.nine
 
-
 //Define a function to create a vehicle based on the given type of properties of classes
 fun createVehicle(type: String,
                   make: String,
@@ -8,7 +7,8 @@ fun createVehicle(type: String,
                   year: Int,
                   properties: Map<String, Any>) : Vehicles? {
     return when (type) {
-        "car" -> { 
+
+        "car" -> {
           val doors = properties["doors"] as? Int ?: return null
           Cars(make, model, year, doors)
         }
