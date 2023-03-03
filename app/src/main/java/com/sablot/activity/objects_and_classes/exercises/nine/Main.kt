@@ -8,7 +8,7 @@ fun createVehicle(type: String,
                   year: Int,
                   properties: Map<String, Any>) : Vehicles? {
     return when (type) {
-        "car" -> {
+        "car" -> { 
           val doors = properties["doors"] as? Int ?: return null
           Cars(make, model, year, doors)
         }
