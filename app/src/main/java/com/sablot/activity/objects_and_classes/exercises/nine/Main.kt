@@ -38,33 +38,98 @@ fun main() {
     //interface - pwedeng multiple
 
     val vehicles = mutableListOf<Vehicles>()
+    while (true) {
 
-    // Create a car and add it to the list
-    val carProperties = mapOf("doors" to 4)
-    val car = createVehicle("car", "Toyota", "Camry", 2021, carProperties)
-    if (car != null) {
-        vehicles.add(car)
+
+        println("Selection")
+        println("1: Add vehicle to the list")
+        println("2:check the vehicle list")
+
+
+        // Create a car and add it to the list\
+        when (readLine()){
+            "1"-> {
+                println("type of vehicle: car, truck or buses")
+
+                val userResponse = readLine().toString()
+
+                 when (userResponse) {
+                    "car" -> {
+                        val carProperties = mapOf("doors" to 4)
+                        println("make:")
+                        val make = readLine().toString()
+                        println("Model:")
+                        val model = readLine().toString()
+                        println("year:")
+                        val year = readLine()?.toIntOrNull() ?: continue
+
+                        val car = createVehicle(userResponse, make, model, year, carProperties)
+                        if (car!= null){
+                            vehicles.add(car)
+
+                        } else{
+                            println("Invalid car properties")
+                        }
+
+                    }
+                     "truck" -> {
+                         val truckProperties = mapOf("payload capacity" to 2)
+                         println("make:")
+                         val make = readLine().toString()
+                         println("Model:")
+                         val model = readLine().toString()
+                         println("year:")
+                         val year = readLine()?.toIntOrNull() ?: continue
+
+                         val truck = createVehicle(userResponse, make, model, year, truckProperties)
+                         if (truck!= null){
+                             vehicles.add(truck)
+
+                         } else{
+                             println("Invalid truck properties")
+                         }
+
+                     }
+                     "bus" -> {
+                         val busProperties = mapOf("seating capacity" to 30)
+                         println("make:")
+                         val make = readLine().toString()
+                         println("Model:")
+                         val model = readLine().toString()
+                         println("year:")
+                         val year = readLine()?.toIntOrNull() ?: continue
+
+                         val bus = createVehicle(userResponse, make, model, year, busProperties)
+                         if (bus!= null){
+                             vehicles.add(bus)
+
+                         } else{
+                             println("Invalid car properties")
+                         }
+                     }
+
+
+                    else -> {
+
+                        println("Invalid vehicle response")
+                    }
+                }
+
+
+            }
+            "2"->{
+                println(vehicles)
+            }
+
+
+
+
+        }
+                //Print vehicle info
+                printVehicle (vehicles)
+
+        //Create vehicle
+        //Print Vehicle Info of the vehicles added
+        //Check if the vehicle list is empty or not otherwise add an error text
     }
-
-    // Create a truck and add it to the list
-    val truckProperties = mapOf("payload capacity" to 2)
-    val truck = createVehicle("truck", "Ford", "F-150", 2021, truckProperties)
-    if (truck != null) {
-        vehicles.add(truck)
-    }
-
-    // Create a bus and add it to the list
-    val busProperties = mapOf("seating capacity" to 30)
-    val bus = createVehicle("bus", "Blue Bird", "Vision", 2021, busProperties)
-    if (bus != null) {
-        vehicles.add(bus)
-    }
-
-    //Print vehicle info
-    printVehicle(vehicles)
-
-    //Create vehicle
-    //Print Vehicle Info of the vehicles added
-    //Check if the vehicle list is empty or not otherwise add an error text
 }
-
