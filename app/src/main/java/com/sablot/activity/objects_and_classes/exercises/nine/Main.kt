@@ -35,37 +35,10 @@ fun printVehicle(vehicles: List<Vehicles>) {
 fun main() {
     //enum class - constant value
     //abstract class - base class, once
-    //interface - pwedeng multiple
+    //interface - allows multiple
 
     val vehicles = mutableListOf<Vehicles>()
-//
-    // Create a car and add it to the list
-//    val carProperties = mapOf("doors" to 4)
-//    val car = createVehicle("car", "Toyota", "Camry", 2021, carProperties)
-//    if (car != null) {
-//        vehicles.add(car)
-//    }
-//
-//    // Create a truck and add it to the list
-//    val truckProperties = mapOf("payload capacity" to 2)
-//    val truck = createVehicle("truck", "Ford", "F-150", 2021, truckProperties)
-//    if (truck != null) {
-//        vehicles.add(truck)
-//    }
-//
-//    // Create a bus and add it to the list
-//    val busProperties = mapOf("seating capacity" to 30)
-//    val bus = createVehicle("bus", "Blue Bird", "Vision", 2021, busProperties)
-//    if (bus != null) {
-//        vehicles.add(bus)
-//    }
-//
-//    //Print vehicle info
-//    printVehicle(vehicles)
 
-    //Create vehicle
-    //Print Vehicle Info of the vehicles added
-    //Check if the vehicle list is empty or not otherwise add an error text
     while (true) {
         println("Choose from the following")
         println("[1] Add Car")
@@ -124,7 +97,7 @@ fun addBus(vehicles: MutableList<Vehicles>) {
     print("Seating Capacity: ")
     val seatingCapacity = readLine()!!.toInt()
 
-    // Create a car and add it to the list
+    // Create a bus and add it to the list
     val busProperties = mapOf("seating capacity" to seatingCapacity)
     val bus = createVehicle("bus", brand, model, year, busProperties)
     if (bus != null) {
@@ -144,7 +117,7 @@ fun addTruck(vehicles: MutableList<Vehicles>) {
     print("Payload Capacity: ")
     val payloadCapacity = readLine()!!.toInt()
 
-    // Create a car and add it to the list
+    // Create a truck and add it to the list
     val truckProperties = mapOf("seating capacity" to payloadCapacity)
     val truck = createVehicle("truck", brand, model, year, truckProperties)
     if (truck != null) {
