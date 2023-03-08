@@ -29,7 +29,7 @@ class Library (private val books: MutableList<LibraryBook> = mutableListOf()) {
 
         fun displayAllLoans() {
             books.filter { it.status == BookStatus.ON_LOAN }
-                .forEach { println("${it.book.title} by ${it.book.author}, borrowed by ${it.book.borrower.name}, due on ${it.book.dueDate}") }
+                .forEach { println("${it.book.title} by ${it.book.author}, borrowed by ${it.book.borrower}, due on ${it.book.dueDate}") }
         }
     }
 }
