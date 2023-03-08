@@ -1,5 +1,6 @@
 package com.sablot.activity.objects_and_classes.exercises.nine
 
+
 class Buses(
     make: String,
     model: String,

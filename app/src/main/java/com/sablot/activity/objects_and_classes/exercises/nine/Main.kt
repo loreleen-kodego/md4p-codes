@@ -31,40 +31,86 @@ fun printVehicle(vehicles: List<Vehicles>) {
     }
 }
 
-
+var bProperties= ""
+var vProperties= 0
+var carSel=""
 fun main() {
-    //enum class - constant value
-    //abstract class - base class, once
-    //interface - pwedeng multiple
+//    enum class - constant value
+//    abstract class - base class, once
+//    interface - pwedeng multiple
 
     val vehicles = mutableListOf<Vehicles>()
 
-    // Create a car and add it to the list
-    val carProperties = mapOf("doors" to 4)
-    val car = createVehicle("car", "Toyota", "Camry", 2021, carProperties)
-    if (car != null) {
-        vehicles.add(car)
+//    // Create a car and add it to the list
+//    val carProperties = mapOf("doors" to 4)
+//    val car = createVehicle("car", "Toyota", "Camry", 2021, carProperties)
+//    if (car != null) {
+//        vehicles.add(car)
+//    }
+
+
+    while (true) {
+
+        println("SElECT OPTION")
+        println("1. Create Vehicle")
+        println("2. Print Vehicle Info of the vehicles added")
+        println("3. exit")
+
+        when (readLine()!!) {
+
+            "1" -> {
+                var flag= 1
+                while (flag==1) {
+                    println("Select Type of Vehicle")
+                    println("Input car,truck or bus")
+                    val vType = readLine()!!
+                    if (vType=="car") {
+                        bProperties = "doors" ; vProperties = 4 ; carSel="car" ; flag= 0
+                    } else if (vType=="truck") {
+                        bProperties = "payload capacity" ; vProperties = 2 ; carSel="truck" ; flag= 0
+                    } else if (vType=="bus") {
+                        bProperties = "seating capacity"; vProperties = 3; carSel="bus" ; flag= 0
+                    } else {
+                        println("invalid")
+                    }
+                }
+                    val tProperties =mapOf(bProperties to vProperties)
+                    println("Input Make :")
+                    val make = readLine()!!
+                    println("Input Model : ")
+                    val model = readLine()!!
+                    println("Input Year : ")
+                    val year = readLine()!!
+                    if (make.isEmpty() || make.isEmpty() || year.isEmpty()  ){
+                        println("Invalid Empty")
+                    }
+                    else {
+                    val yearv = year.toInt()
+                    val addVehicles = createVehicle(carSel, make, model, yearv, tProperties)
+                    if (addVehicles != null) {
+                        vehicles.add(addVehicles)
+                        println("SUCCESFULLY ADDED")
+                    }
+                }
+
+            }
+            "2" -> {
+                println("two")
+                printVehicle(vehicles)
+            }
+            "3" -> {
+                println("\nExiting program...")
+                return
+            }
+            else -> {
+                println("\nInvalid option! Please try again.")
+            }
+
+        }
+        //Create vehicle
+        //Print Vehicle Info of the vehicles added
+        //Check if the vehicle list is empty or not otherwise add an error text
+
     }
-
-    // Create a truck and add it to the list
-    val truckProperties = mapOf("payload capacity" to 2)
-    val truck = createVehicle("truck", "Ford", "F-150", 2021, truckProperties)
-    if (truck != null) {
-        vehicles.add(truck)
-    }
-
-    // Create a bus and add it to the list
-    val busProperties = mapOf("seating capacity" to 30)
-    val bus = createVehicle("bus", "Blue Bird", "Vision", 2021, busProperties)
-    if (bus != null) {
-        vehicles.add(bus)
-    }
-
-    //Print vehicle info
-    printVehicle(vehicles)
-
-    //Create vehicle
-    //Print Vehicle Info of the vehicles added
-    //Check if the vehicle list is empty or not otherwise add an error text
 }
 
