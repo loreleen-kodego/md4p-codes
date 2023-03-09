@@ -4,9 +4,15 @@ data class Book(
     val title: String,
     val author: String,
     val publicationDate: String,
-    var status: BookStatus
-    val dueDate: String
+    var status: BookStatus,
+    val dueDate: String,
 ) {
+    fun add(book: Nothing?) {
 
+    }
+    fun remove(book: Any) {
+
+    }
+    lateinit var ISBN: String
     val borrower: String? = null
 }

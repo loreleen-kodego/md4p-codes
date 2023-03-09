@@ -4,4 +4,4 @@ data class Borrower(
     val libraryCardNumber: String,
     override val name: String,
     override val phone: String
-) : Person
+) : Person //inheritance of Borrower

@@ -1,8 +1,11 @@
 package com.sablot.activity.objects_and_classes.Activity1
 
-}class LibraryLoan (val loans: List<Loan>) {
+import android.app.ApplicationExitInfo
 
-//    enum class MainMenuOption {
+
+//class LibraryLoan (val loans: List<Loan>) {
+
+//    enum class MainMenuOption() {
 //        ADD_BOOK,
 //        REMOVE_BOOK,
 //        DISPLAY_ALL_BOOKS,
@@ -10,7 +13,7 @@ package com.sablot.activity.objects_and_classes.Activity1
 //        DISPLAY_ALL_LOANS,
 //        EXIT
 //    }
-}
+//}
 
 fun displayMainMenu() {
     println("Main menu:")
@@ -33,6 +36,8 @@ fun readMainMenuChoice(): MainMenuOption {
             4 -> MainMenuOption.CREATE_LOAN
             5 -> MainMenuOption.DISPLAY_ALL_LOANS
             6 -> MainMenuOption.EXIT
+                 else
+
 
 
         }
@@ -43,8 +48,54 @@ fun main() {
 
     var input: String
     var option: MainMenuOption
-    var library = Library()
+    val library = Library()
 
-    displayMainMenu()
-    readMainMenuChoice()
+    val choice = readLine()?.toIntOrNull()
+    when {
+        choice == 1 -> {
+            print("Enter book title: ")
+            val title = readLine() ?: ""
+            print("Enter book author: ")
+            val author = readLine() ?: ""
+            print("Enter book ISBN: ")
+            val isbn = readLine() ?: ""
+            library.addBook(Book(title, author, isbn))
+            println("Book added successfully.")
+        }
+        choice == 2 -> {
+            print("Enter book title: ")
+            val title = readLine() ?: ""
+            print("Enter book author: ")
+            val author = readLine() ?: ""
+            print("Enter book ISBN: ")
+            val isbn = readLine() ?: ""
+            library.removeBook(Book(title, author, isbn))
+            println("Book removed successfully.")
+        }
+        choice == 3 -> library.displayAllBooks()
+        choice == 4 -> {
+            print("Enter book title: ")
+            val title = readLine() ?: ""
+            print("Enter book author: ")
+            val author = readLine() ?: ""
+            print("Enter book ISBN: ")
+            val isbn = readLine() ?: ""
+            val book = Book(title, author, isbn)
+            print("Enter borrower name: ")
+            val borrower = readLine() ?: ""
+            print("Enter due date (yyyy-mm-dd): ")
+            val dueDate = readLine() ?: ""
+            library.createLoan(book, borrower, dueDate)
+            println("Loan created successfully.")
+        }
+        choice == 5 -> library.displayAllLoans()
+        choice == 6 -> println("Exit")
+        else -> println("Invalid choice. Please try again.")
+
+    }
+
+
+    println("Thank you for using the Library Management System.")
+    return
+
 }
