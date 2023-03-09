@@ -1,7 +1,5 @@
 package com.sablot.activity.objects_and_classes.Activity1
 
-import android.app.ApplicationExitInfo
-
 
 //class LibraryLoan (val loans: List<Loan>) {
 
@@ -15,34 +13,34 @@ import android.app.ApplicationExitInfo
 //    }
 //}
 
-fun displayMainMenu() {
-    println("Main menu:")
-    println("1. Add a book")
-    println("2. Remove a book")
-    println("3. Display all books")
-    println("4. Create a loan")
-    println("5. Display all loans")
-    println("6. Exit")
-}
-
-fun readMainMenuChoice(): MainMenuOption {
-    var choice: MainMenuOption? = null
-    while (choice == null) {
-        print("Enter your choice: ")
-        choice = when (readLine()?.toIntOrNull()) {
-            1 -> MainMenuOption.ADD_BOOK
-            2 -> MainMenuOption.REMOVE_BOOK
-            3 -> MainMenuOption.DISPLAY_ALL_BOOKS
-            4 -> MainMenuOption.CREATE_LOAN
-            5 -> MainMenuOption.DISPLAY_ALL_LOANS
-            6 -> MainMenuOption.EXIT
-                 else
-
-
-
-        }
-    }
-}
+//fun displayMainMenu() {
+//    println("Main menu:")
+//    println("1. Add a book")
+//    println("2. Remove a book")
+//    println("3. Display all books")
+//    println("4. Create a loan")
+//    println("5. Display all loans")
+//    println("6. Exit")
+//}
+//
+//fun readMainMenuChoice(): MainMenuOption {
+//    var choice: MainMenuOption? = null
+//    while (choice == null) {
+//        print("Enter your choice: ")
+//        choice = when (readLine()?.toIntOrNull()) {
+//            1 -> MainMenuOption.ADD_BOOK
+//            2 -> MainMenuOption.REMOVE_BOOK
+//            3 -> MainMenuOption.DISPLAY_ALL_BOOKS
+//            4 -> MainMenuOption.CREATE_LOAN
+//            5 -> MainMenuOption.DISPLAY_ALL_LOANS
+//            6 -> MainMenuOption.EXIT
+//                 else
+//
+//
+//
+//        }
+//    }
+//}
 
 fun main() {
 
@@ -97,5 +95,9 @@ fun main() {
 
     println("Thank you for using the Library Management System.")
     return
+
+}
+
+fun Book(title: String, author: String, publicationDate: String): Book {
 
 }

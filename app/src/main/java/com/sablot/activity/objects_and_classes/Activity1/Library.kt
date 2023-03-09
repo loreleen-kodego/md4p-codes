@@ -4,11 +4,15 @@ import kotlin.String.Companion
 
 class Library (private val books: MutableList<LibraryBook> = mutableListOf()) {
 
-        fun addBook(book: LibraryBook) {
-            books.add(book)
+        fun addBook(book: Book) {
+            books.add(Book())
         }
 
-        fun removeBook(book: Book) {
+    private fun Book(): LibraryBook {
+        TODO("Not yet implemented")
+    }
+
+    fun removeBook(book: Book) {
             with(books) { -> remove<Any>(book) }
         }
 
