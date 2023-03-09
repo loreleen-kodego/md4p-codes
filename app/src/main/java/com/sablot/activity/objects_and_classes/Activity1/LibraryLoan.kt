@@ -2,7 +2,9 @@ package com.sablot.activity.objects_and_classes.Activity1
 
 class LibraryLoan(
     val loans: MutableList<Loan> = mutableListOf()
-)
+){
+
+}
 //class LibraryLoan (val loans: List<Loan>) {
 
 //    enum class MainMenuOption() {

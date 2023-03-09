@@ -5,7 +5,7 @@ data class Book(
     val author: String,
     val publicationDate: String,
     var status: BookStatus,
-    val dueDate: String,
+//    val dueDate: String,
 ) {
     fun add(book: Nothing?) {
 

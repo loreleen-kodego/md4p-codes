@@ -2,6 +2,14 @@ package com.sablot.activity.objects_and_classes.Activity1
 
 import kotlin.String.Companion
 
+private val Any.dueDate: String
+    get() {
+        TODO("Not yet implemented")
+    }
+private val Any.borrower: String
+    get() {
+        TODO("Not yet implemented")
+    }
 private val Any.publicationDate: Any
     get() {
         TODO("Not yet implemented")
