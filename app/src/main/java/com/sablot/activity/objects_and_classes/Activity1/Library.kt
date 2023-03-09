@@ -2,6 +2,15 @@ package com.sablot.activity.objects_and_classes.Activity1
 
 import kotlin.String.Companion
 
+private val Any.publicationDate: Any
+    get() {}
+private val Any.author: Any
+    get() {}
+private val Any.title: Any
+    get() {
+        TODO("Not yet implemented")
+    }
+
 class Library (private val books: MutableList<LibraryBook> = mutableListOf()) {
 
         fun addBook(book: Book) {
@@ -17,7 +26,15 @@ class Library (private val books: MutableList<LibraryBook> = mutableListOf()) {
         }
 
         fun displayAllBooks() {
-            books.forEach { println("${it.book.title} by ${it.book.author}, published on ${it.book.publicationDate}, status: ${it.status}") }
+            books.forEach { it: LibraryBook -> println(buildString {
+        append(it.book.title)
+        append(" by ")
+        append(it.book.author)
+        append(", published on ")
+        append(it.book.publicationDate)
+        append(", status: ")
+        append(it.status)
+    }) }
         }
 
         fun createLoan(book: Book, borrower: String, dueDate: String): Loan {
@@ -46,9 +63,13 @@ class Library (private val books: MutableList<LibraryBook> = mutableListOf()) {
     }
 
     fun displayAllLoans() {
-            books.filter { it.status == BookStatus.ON_LOAN }
-                .forEach { println("${it.book.title} by ${it.book.author}, borrowed by ${it.book.borrower}, due on ${it.book.dueDate}") }
+        with(books) {
+            filter { it.status == BookStatus.ON_LOAN }
+                    .forEach(fun(it: LibraryBook) {
+                        println("${it.book.title} by ${it.book.author}, borrowed by ${it.book.borrower}, due on ${it.book.dueDate}")
+                    })
         }
+    }
     }
 
 private fun <book> MutableList<LibraryBook>.add(element: Book) {
