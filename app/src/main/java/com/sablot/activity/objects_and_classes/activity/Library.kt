@@ -9,6 +9,7 @@ package com.sablot.activity.objects_and_classes.activity
 
 class Library {
     val listOfBooks = mutableListOf<Book>()
+    val listOfLoans = mutableListOf<Loan>()
 
     //Adding of books
     fun addBook(book: Book) {
@@ -23,6 +24,13 @@ class Library {
     //display all books
     fun displayAllBooks() {
         listOfBooks.forEach {
+            println(it.toString())
+        }
+    }
+
+    //Display all loans
+    fun displayLoans() {
+        listOfLoans.forEach {
             println(it.toString())
         }
     }
