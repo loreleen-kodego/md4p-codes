@@ -28,7 +28,7 @@ fun main() {
 fun takeOrder(cost: Double) {
     totalSales += cost // totalSales = totalSales + cost
     totalOrders++
-    println("com.sablot.activity.objects_and_classes.exercises.ten.Order received. Your total is P$cost.")
+    println(" Your total is P$cost.")
 }
 
 fun generateReport() {

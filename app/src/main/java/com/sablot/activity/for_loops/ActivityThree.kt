@@ -36,12 +36,8 @@ import java.util.*
 //    }
 
 fun main() {
-//    orderFood()
-//    var count = 0
-//    do {
-//        println("Count is $count")
-//        count++
-//    } while (count <= 5)
+    orderFood()
+
 
 //    for (i in 1..10) {
 //        println(i)
@@ -80,12 +76,12 @@ fun orderFood() {
     } while (orderMore)
 }
 
-fun calculateGrade(score: Int) : String {
-    return when {
-        score >= 90 -> "A"
-        score >= 80 -> "B"
-        score >= 70 -> "A"
-        score >= 60 -> "B"
-        else -> "F"
-    }
-}
+//fun calculateGrade(score: Int) : String {
+//    return when {
+//        score >= 90 -> "A"
+//        score >= 80 -> "B"
+//        score >= 70 -> "A"
+//        score >= 60 -> "B"
+//        else -> "F"
+//    }
+//}

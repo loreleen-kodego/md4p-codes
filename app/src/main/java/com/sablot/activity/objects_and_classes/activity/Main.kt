@@ -4,12 +4,29 @@ val library = Library()
 
 
 fun main() {
-    library.listOfBooks.addAll(bookList)
-    displayMenu()
-    userInputSelection()
+
+//    library.listOfBooks.addAll(bookList)
+//    displayMenu()
+//    userInputSelection()
+    print("Type 'Menu' for Book Library")
+    println()
+    var number = Int
+    val selectionName = readLine()!!.toString()
+    when (selectionName) {
+        "Menu" -> {
+            library.listOfBooks.addAll(bookList)
+            displayMenu(selectionName)
+            userInputSelection()
+        }
+//        else -> println("Invalid input")
+    }
+    return main()
+
+
+
 }
 
-fun displayMenu() {
+fun displayMenu(selectionName: String) {
     for (selectionName in MainMenuOption.values()) {
         println(selectionName.selectionName)
     }
@@ -18,15 +35,26 @@ fun displayMenu() {
 fun userInputSelection() {
     val choice = readLine()?.toIntOrNull()
 
+
     when (choice) {
         MainMenuOption.ADDING_BOOK.number -> addBook()
         MainMenuOption.REMOVING_BOOK.number -> removeBook()
         MainMenuOption.DISPLAY_BOOK.number -> displayBook()
-        MainMenuOption.CREATE_LOAN.number -> TODO()
-        MainMenuOption.DISPLAY_LOAN.number -> TODO()
+        MainMenuOption.CREATE_LOAN.number -> createLoans()
+        MainMenuOption.DISPLAY_LOAN.number -> displayLoans()
+
         else -> println("Invalid keyword")
     }
 }
+
+fun displayLoans() {
+
+}
+
+fun createLoans() {
+
+}
+
 
 fun addBook() {
     while (true) {
@@ -49,7 +77,7 @@ fun addBook() {
 
 fun displayBook() {
     library.displayAllBooks()
-    return main()
+//    return main()
 }
 
 fun removeBook() {
