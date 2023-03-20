@@ -10,8 +10,8 @@ fun createVehicle(type: String,
 
     return when (type) {
         "car" -> {
-          val doors = properties["doors"] as? Int ?: return null
-          Cars(make, model, year, doors)
+            val doors = properties["doors"] as? Int ?: return null
+            Cars(make, model, year, doors)
         }
         "truck" -> {
             val payloadCapacity = properties["payload capacity"] as? Int ?: return null
@@ -35,36 +35,93 @@ fun printVehicle(vehicles: List<Vehicles>) {
 fun main() {
     //enum class - constant value
     //abstract class - base class, once
-    //interface - pwedeng multiple
+    //interface - allows multiple
 
     val vehicles = mutableListOf<Vehicles>()
 
+    while (true) {
+        println("Choose from the following")
+        println("[1] Add Car")
+        println("[2] Add Bus")
+        println("[3] Add Truck")
+        println("[4] Exit")
+
+        when(readLine()!!.toInt()) {
+            1 -> addCar(vehicles)
+            2 -> addBus(vehicles)
+            3 -> addTruck(vehicles)
+            4 -> break
+            else -> println("Invalid keyword")
+        }
+
+        //Print vehicle info
+        printVehicle(vehicles)
+
+        //Create vehicle
+        //Print Vehicle Info of the vehicles added
+        //Check if the vehicle list is empty or not otherwise add an error text
+    }
+
+
+}
+
+fun addCar(vehicles: MutableList<Vehicles>) {
+
+    println("Enter car details")
+    print("Brand: ")
+    val brand = readLine().toString()
+    print("Model: ")
+    val model = readLine().toString()
+    print("Year: ")
+    val year = readLine()!!.toInt()
+    print("Number of doors: ")
+    val numberOfDoors = readLine()!!.toInt()
+
     // Create a car and add it to the list
-    val carProperties = mapOf("doors" to 4)
-    val car = createVehicle("car", "Toyota", "Camry", 2021, carProperties)
+    val carProperties = mapOf("doors" to numberOfDoors)
+    val car = createVehicle("car", brand, model, year, carProperties)
     if (car != null) {
         vehicles.add(car)
     }
+}
 
-    // Create a truck and add it to the list
-    val truckProperties = mapOf("payload capacity" to 2)
-    val truck = createVehicle("truck", "Ford", "F-150", 2021, truckProperties)
-    if (truck != null) {
-        vehicles.add(truck)
-    }
+fun addBus(vehicles: MutableList<Vehicles>) {
+
+    println("Enter bus details")
+    print("Brand: ")
+    val brand = readLine().toString()
+    print("Model: ")
+    val model = readLine().toString()
+    print("Year: ")
+    val year = readLine()!!.toInt()
+    print("Seating Capacity: ")
+    val seatingCapacity = readLine()!!.toInt()
 
     // Create a bus and add it to the list
-    val busProperties = mapOf("seating capacity" to 30)
-    val bus = createVehicle("bus", "Blue Bird", "Vision", 2021, busProperties)
+    val busProperties = mapOf("seating capacity" to seatingCapacity)
+    val bus = createVehicle("bus", brand, model, year, busProperties)
     if (bus != null) {
         vehicles.add(bus)
     }
+}
 
-    //Print vehicle info
-    printVehicle(vehicles)
+fun addTruck(vehicles: MutableList<Vehicles>) {
 
-    //Create vehicle
-    //Print Vehicle Info of the vehicles added
-    //Check if the vehicle list is empty or not otherwise add an error text
+    println("Enter truck details")
+    print("Brand: ")
+    val brand = readLine().toString()
+    print("Model: ")
+    val model = readLine().toString()
+    print("Year: ")
+    val year = readLine()!!.toInt()
+    print("Payload Capacity: ")
+    val payloadCapacity = readLine()!!.toInt()
+
+    // Create a truck and add it to the list
+    val truckProperties = mapOf("seating capacity" to payloadCapacity)
+    val truck = createVehicle("truck", brand, model, year, truckProperties)
+    if (truck != null) {
+        vehicles.add(truck)
+    }
 }
 
