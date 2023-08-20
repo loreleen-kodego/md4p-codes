@@ -2,7 +2,7 @@ package com.sablot.activity.strings
 
 import android.util.Log
 
-//fun main() {
+//fun com.sablot.activity.objects_and_classes.exercises.ten.main() {
 //    val string1 = "Hello"
 //    val string2 = "World"
 //    val concatenatedString = "$string1 $string2"

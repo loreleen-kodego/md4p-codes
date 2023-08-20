@@ -1,6 +1,6 @@
 package com.sablot.activity.data_structure
 
-//fun main() {
+//fun com.sablot.activity.objects_and_classes.exercises.ten.main() {
 ////    Exercise 1: Create a program that reads in a list of names from the user, and then performs
 ////    some basic operations on the list, such as sorting the names, finding the longest and
 ////    shortest name, and printing out the names in reverse order.
